@@ -13,7 +13,7 @@
 [MySQL tool 사용법](https://ooz.co.kr/253)
 
 ```
-Eclipse Oxygen, jdk8, MySQL5.6, Mybatis, Maven, ...
+Eclipse Oxygen, jdk8, MySQL5.7, Mybatis, Maven, ...
 ```
 ## 프로젝트 구조
 <h5>DTO, Controller, DAO, DAOImpl, Service, ServiceImpl, Mapper.xml, .jsp</h5>
