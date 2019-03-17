@@ -1,30 +1,24 @@
-package org.spring.model.member.dto;
+package org.spring.pj.model.member.dto;
 
 import java.util.Date;
 
 public class MemberDTO {
 	private String userid;
-	private String passswd;
+	private String passwd;
 	private String name;
 	private String email;
 	private Date join_date;
-	
-	@Override
-	public String toString() {
-		return "MemberDTO [userid=" + userid + ", passswd=" + passswd + ", name=" + name + ", email=" + email
-				+ ", join_date=" + join_date + "]";
-	}
 	public String getUserid() {
 		return userid;
 	}
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
-	public String getPassswd() {
-		return passswd;
+	public String getPasswd() {
+		return passwd;
 	}
-	public void setPassswd(String passswd) {
-		this.passswd = passswd;
+	public void setPasswd(String passwd) {
+		this.passwd = passwd;
 	}
 	public String getName() {
 		return name;
@@ -44,7 +38,11 @@ public class MemberDTO {
 	public void setJoin_date(Date join_date) {
 		this.join_date = join_date;
 	}
-	
+	@Override
+	public String toString() {
+		return "MemberDTO [userid=" + userid + ", passwd=" + passwd + ", name=" + name + ", email=" + email
+				+ ", join_date=" + join_date + "]";
+	}
 	
 	
 }

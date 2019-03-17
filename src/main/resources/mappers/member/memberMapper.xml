@@ -10,4 +10,34 @@
     FROM MEMBER
     ORDER BY name
   </select>
+  
+  <insert id="insertMember">
+  /* member.insertMember */
+  	INSERT INTO MEMBER
+  		(
+  			userid
+  		  , passwd
+  		  , name
+  		  , email
+  		) VALUES
+  		(
+  			#{userid}
+  		  , #{passwd}
+  		  , #{name}
+  		  , #{email}
+  		)
+  </insert>
+  
+  <delete id="deleteMember">
+  	DELETE
+  	FROM MEMBER
+  	WHERE userid = #{userid}
+  </delete>
+
+	<select id="readMember" resultType="memberDTO">
+	SELECT *
+	FROM MEMBER
+	WHERE userid = #{userid}	
+	</select>
+  
   </mapper>
