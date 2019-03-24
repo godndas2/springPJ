@@ -12,7 +12,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	MemberDao memberDao;
-	
+
 	@Override
 	public List<MemberDTO> memberList() {
 		// TODO Auto-generated method stub
@@ -29,7 +29,6 @@ public class MemberServiceImpl implements MemberService {
 	public void deleteMember(String userid) {
 		// TODO Auto-generated method stub
 		memberDao.deleteMember(userid);
-		
 	}
 
 	@Override
@@ -37,5 +36,12 @@ public class MemberServiceImpl implements MemberService {
 		// TODO Auto-generated method stub
 		return memberDao.readMember(userid);
 	}
+
+	@Override
+	public void updateMember(MemberDTO dto) {
+		// TODO Auto-generated method stub
+		memberDao.updateMember(dto);
+	}
+
 
 }

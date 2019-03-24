@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="board">
+  
+  <select id="boardList" resultType="org.spring.pj.model.board.dto.BoardDTO">
+  	SELECT * 
+  	FROM BOARD
+  	ORDER BY bno
+  </select>
+  
+  <insert id="boardInsert">
+INSERT INTO board
+(       bno
+        ,title
+        ,content
+        ,writer
+)
+VALUES
+(
+(select ifnull(max(b.bno), 0)+1 from board b) 
+      , #{title}
+        , #{content}
+        ,#{writer}
+)
+  </insert>
+  
+</mapper> 

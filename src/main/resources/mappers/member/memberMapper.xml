@@ -39,5 +39,13 @@
 	FROM MEMBER
 	WHERE userid = #{userid}	
 	</select>
-  
+
+	<update id="updateMember">
+	UPDATE MEMBER
+	SET name = #{name}
+	, passwd = #{passwd}
+	, email = #{email}
+	WHERE userid = #{userid}
+	</update>  
+
   </mapper>

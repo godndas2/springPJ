@@ -1,3 +1,4 @@
+
 package org.spring.pj.controller;
 
 import java.util.List;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@Controller 
+@Controller
 @RequestMapping("/member/*")
 public class MemberController {
 
@@ -44,15 +45,21 @@ public class MemberController {
 		return "redirect:/member/list";
 	}
 	
-	@RequestMapping("member/delete")
-	public String deleteMember(@RequestParam String userid) {
-		memberService.deleteMember(userid);
-		return "redirect:/member/list";
+	@RequestMapping("member/delete") 
+	public String delete(@RequestParam String userid) {
+			memberService.deleteMember(userid);
+			return "redirect:/member/list"; 
+		}
+
+	@RequestMapping("member/read") //url
+	public String memberRead(@RequestParam String userid, Model model) {   
+		model.addAttribute("read", memberService.readMember(userid));
+		return "member/read"; //jsp
 	}
 	
-	@RequestMapping("member/read")
-	public String memberRead(@RequestParam String userid, Model model) {
-		model.addAttribute("read", memberService.readMember(userid));
-		return "member/read";
+	@RequestMapping("member/update")
+	public String memberUpdate(@ModelAttribute MemberDTO dto) {
+		memberService.updateMember(dto);
+		return "redirect:/member/list";
 	}
 }

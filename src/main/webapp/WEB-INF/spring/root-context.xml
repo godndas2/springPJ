@@ -13,7 +13,7 @@
         lazy-init="false">
  
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/member" />
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/member?useSSL=false" />
         <property name="username" value="young" />
         <property name="password" value="young" />
     </bean>        

@@ -29,5 +29,6 @@
 		</tr>
 	</c:forEach>
 </table>
+<input type="button" value="회원등록" onclick="location.href='/member/insert'">
 </body>
 </html>

@@ -1,6 +1,9 @@
+
 package org.spring.pj.model.member.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.spring.pj.model.member.dto.MemberDTO;
@@ -36,5 +39,12 @@ public class MemberDaoImpl implements MemberDao {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("member.readMember", userid);
 	}
+
+	@Override
+	public void updateMember(MemberDTO dto) {
+		// TODO Auto-generated method stub
+		sqlSession.update("member.updateMember", dto);
+	}
+
 
 }
