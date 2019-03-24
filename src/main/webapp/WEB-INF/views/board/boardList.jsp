@@ -22,7 +22,9 @@
 	<c:forEach var="board" items="${list}">
 		<tr>
 			<td>${board.bno}</td>
-			<td>${board.title} </td>
+			<td>
+			<a href="/board/detail?bno=${board.bno}">${board.title}</a>
+			</td>
 			<td>${board.content} </td>
 			<td>${board.writer} </td>
 			<td><fmt:formatDate value="${board.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
@@ -30,5 +32,6 @@
 		</tr>
 	</c:forEach>
 </table>
+<input type="button" value="등록" onclick="location.href='/board/insert'">
 </body>
 </html>

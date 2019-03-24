@@ -25,4 +25,28 @@ SqlSession sqlsession;
 		sqlsession.insert("board.boardInsert", dto);
 	}
 
+	@Override
+	public BoardDTO boardDetail(String bno) {
+		// TODO Auto-generated method stub
+		return sqlsession.selectOne("board.boardDetail", bno );
+	}
+
+	@Override
+	public void boardDelete(String bno) {
+		// TODO Auto-generated method stub
+		sqlsession.delete("board.boardDelete", bno);
+	}
+
+	@Override
+	public void boardUpdate(BoardDTO dto) {
+		// TODO Auto-generated method stub
+		sqlsession.update("board.boardUpdate", dto);
+	}
+
+	@Override
+	public void viewCnt(String bno) {
+		// TODO Auto-generated method stub
+		sqlsession.update("board.viewCnt", bno);
+	}
+
 }

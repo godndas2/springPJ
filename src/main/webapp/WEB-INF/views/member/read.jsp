@@ -11,6 +11,7 @@
 
 <script>
 	$(function() {
+		
 		$("#btnUpdate").click(function() {
 			document.form1.action = "/member/update";
 			document.form1.submit();
@@ -26,9 +27,7 @@
 </head>
 <body>
 <form name="form1" method="post"> 
-
 	<table>
-
 		<tr>
 			<td>아이디</td>
 			<td><input name="userid" value="${read.userid}" readonly></td>

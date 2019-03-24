@@ -24,4 +24,28 @@ public class BoardServiceImpl implements BoardService {
 		boardDao.boardInsert(dto);
 	}
 
+	@Override
+	public BoardDTO boardDetail(String bno) {
+		// TODO Auto-generated method stub
+		return boardDao.boardDetail(bno);
+	}
+
+	@Override
+	public void boardDelete(String bno) {
+		// TODO Auto-generated method stub
+		boardDao.boardDelete(bno);
+	}
+
+	@Override
+	public void boardUpdate(BoardDTO dto) {
+		// TODO Auto-generated method stub
+		boardDao.boardUpdate(dto);
+	}
+
+	@Override
+	public void viewCnt(String bno) {
+		// TODO Auto-generated method stub
+		boardDao.viewCnt(bno);
+	}
+
 }

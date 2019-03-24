@@ -26,4 +26,30 @@ VALUES
 )
   </insert>
   
+  
+<select id="boardDetail" resultType="org.spring.pj.model.board.dto.BoardDTO">
+	SELECT * 
+	FROM board 
+	WHERE bno = #{bno}
+</select>
+
+<delete id="boardDelete">
+	DELETE 
+	FROM board
+	WHERE bno = #{bno}
+</delete>
+
+<update id="boardUpdate">
+UPDATE board
+SET title = #{title},
+content = #{content}
+WHERE bno = #{bno}
+</update>
+  
+ <update id="viewCnt">
+	UPDATE BOARD
+	SET viewcnt = viewcnt + 1
+	WHERE bno = #{bno}
+ </update>
+  
 </mapper> 
